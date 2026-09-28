@@ -195,7 +195,7 @@ Code comments and printed outputs in the notebooks are in Portuguese; figures an
 
 ## Reproducing the analysis
 
-1. Download the 2025 extracts from ANTAQ's Estatístico Aquaviário and save them in `data/raw/` with the file names listed in [Data](#data).
+1. Export the 2025 data from ANTAQ's [Painel do Estatístico Aquaviário](https://aquarela.antaq.gov.br/single/?appid=2b370bbc-6a27-4e2e-8c43-56f1732c19f8&sheet=816b5cf4-46df-407d-b1e8-85f24d1c3015&opt=currsel%2Cctxmenu) and save the five extracts in `data/raw/` with the file names listed in [Data](#data). See [`data/raw/README.md`](data/raw/README.md) for how to export them.
 2. Install the dependencies: `pip install pandas numpy matplotlib openpyxl`
 3. Open `notebooks/02_pipeline_antaq.ipynb` and run all cells. The notebook finds the project folder on its own; no paths to edit.
 
