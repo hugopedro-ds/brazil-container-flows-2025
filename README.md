@@ -15,7 +15,7 @@ I spent 17 years in freight forwarding negotiating ocean freight on Brazil trade
 | 1 | Median pre-berthing wait ranges from **2 h to 22 h** across the 11 main container terminals | [fig01](#1-waiting-time-varies-tenfold-between-terminals) |
 | 2 | **54%** of the time container ships spend at those terminals is spent waiting to berth, not working | [fig02](#2-ships-spend-more-time-waiting-than-working) |
 | 3 | Waiting rises in the second half of the year: **+8.2 h** in 2025, and about the same in 2024. It is seasonal, and 2025 as a whole was calmer than 2024 | [fig03](#3-waiting-rises-in-the-second-half-every-year) |
-| 4 | **Maersk leads** Brazil's deep-sea container volume under every counting rule and scenario tested; the narrowest margin over MSC is 0.4 pp | [fig04](#4-maersk-leads-msc-is-close-behind) |
+| 4 | **Maersk and MSC are neck and neck** in Brazil's deep-sea container volume: about 1 pp apart, and which one leads depends on how shared vessels are counted | [fig04](#4-maersk-and-msc-are-neck-and-neck) |
 | 5 | At least **16%** of deep-sea TEU moved on vessels confirmed as chartered-in | [fig05](#5-at-least-16-moved-on-chartered-in-vessels) |
 | 6 | Brazil ships out **empty dry** boxes (33% of dry exports are empty) and brings in **empty reefers** (54% of reefer imports) | [fig06](#6-empty-dry-boxes-go-out-empty-reefers-come-in) |
 | 7 | About **24%** of international container volume moves via transhipment hubs; Paranaguá is the most hub-dependent large port (41%) | [fig07](#7-a-quarter-of-the-trade-goes-through-hubs) |
@@ -53,6 +53,8 @@ I spent 17 years in freight forwarding negotiating ocean freight on Brazil trade
 **Notebooks 04–15 (findings 8–18)** use ANTAQ's bulk download for 2024 and 2025: calls with timestamps (`Atracacao`), cargo by call (`Carga`), the goods recorded inside each container (`CargaConteinerizada`), daily berth occupancy (`TaxaOcupacao`) and stoppages during the call (`TemposAtracacao`).
 
 **The two sources agree.** For 2025, 9,999 container calls appear in both with an identical TEU figure per call. The bulk files add 85 calls, all at Paranaguá in February (113k TEU): the month missing from the panel export, not from ANTAQ. Eight calls added after the bulk extraction (1.3k TEU) are only in the panel.
+
+**Waiting times check out.** Waits recomputed from the arrival and berthing timestamps match ANTAQ's own published waiting time (`TEsperaAtracacao`) to within 0.1 hours for 100% of 19,280 container calls in 2024–2025.
 
 **Scope:** deep-sea calls (*Longo Curso*). For 2025, **11.09 million TEU**. The raw files are not in this repository; see [Reproducing the analysis](#reproducing-the-analysis).
 
@@ -106,7 +108,7 @@ Median wait across the 11 terminals went from **10.5 h in H1 to 18.7 h in H2 202
 
 **Update with 2024 data (notebook 07):** the same rise happened in 2024 (+8.3 h, against +9.0 h in 2025 on the two-year base), so it is **seasonal, not a trend**. 2025 as a whole was calmer than 2024 (median 15.2 h vs 17.6 h), mainly because DP World Santos and Portonave were heavily congested in 2024.
 
-### 4. Maersk leads, MSC is close behind
+### 4. Maersk and MSC are neck and neck
 
 ![Carrier shares](outputs/figures/fig04_carrier_share.png)
 
@@ -124,7 +126,7 @@ Many vessels on Brazil services are shared between carriers (vessel-sharing agre
 | COSCO | 6.1% | 3.8% |
 | ONE | 1.9% | 4.3% |
 
-**Is the Maersk lead robust?** Three vessels had a debatable carrier assignment, so I re-ran the shares with each one moved:
+**How sensitive is the order?** Three vessels had a debatable carrier assignment, so I re-ran the shares with each one moved:
 
 | Scenario | Maersk − MSC, split rule |
 |---|---|
@@ -133,7 +135,9 @@ Many vessels on Brazil services are shared between carriers (vessel-sharing agre
 | SEASPAN EMPIRE reassigned to Hapag-Lloyd + Maersk | +0.72 pp |
 | MSC MICHELA with its 2026 partners (MSC + Hapag-Lloyd + ZIM) | +0.73 pp |
 
-Maersk leads in every scenario, and by 2.3–2.5 pp under the primary-carrier rule. The unmapped tail (9.5% of TEU) is the other risk: under the split rule, MSC would need to take 6.2% more of that tail than Maersk, or the four largest unmapped vessels would all have to be MSC-only. Those four were checked, and none was.
+Maersk stayed ahead in these three scenarios, and by 2.3–2.5 pp under the primary-carrier rule, but the margin under the split rule is smaller than the effect of two vessel assignments (see the update below). The unmapped tail (9.5% of TEU) is the other risk: under the split rule, MSC would need to take 6.2% more of that tail than Maersk, or the four largest unmapped vessels would all have to be MSC-only. Those four were checked, and none was.
+
+**Update (October 2026).** A check of the 20 vessels that moved the most TEU found 18 correctly assigned and two that were not reliable. TIGER PLATA, a Rio Grande–River Plate feeder, was listed as shared by Maersk, KMTC, ONE and Hapag-Lloyd without a source to support it. MSC AGADIR was listed with its 2026 partners, while its name and its 2025 calls point to MSC. Correcting both would put MSC ahead of Maersk under the split rule by roughly 0.4 pp (an estimate, not yet recomputed). The two carriers are effectively tied, and the order between them should not be read as meaningful.
 
 **What the two rules reveal:** ONE more than doubles under the split rule (1.9% → 4.3%). In Brazil it mostly buys space on other carriers' ships. COSCO does the opposite (6.1% → 3.8%): it is often the carrier running the service.
 
