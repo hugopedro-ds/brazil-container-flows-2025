@@ -2,7 +2,7 @@
 
 **Who carries Brazil's deep-sea containers, how long ships wait at the terminals, where the empties go and why, built from ANTAQ's port data and a vessel-by-vessel carrier mapping. The core year is 2025; the later notebooks add 2024 to separate seasonality from trend.**
 
-I spent 17 years in freight forwarding negotiating ocean freight on Brazil trade lanes. Most of the numbers the market uses for Brazil (carrier shares, port congestion, empty repositioning) come from paid databases or from anecdote. This project rebuilds them from public data, and is explicit about where the data stops.
+I have 17 years of international experience, most of it in freight forwarding and much of that negotiating ocean freight with carriers. Over the past months I rebuilt the numbers of Brazil's container market from ANTAQ's public port data: 2024 and 2025 calls, 11 million deep-sea TEU in 2025, and a carrier table built vessel by vessel, because ANTAQ records the ship, not the operator.
 
 ---
 
