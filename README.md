@@ -36,6 +36,18 @@ I have 17 years of international experience, most of it in freight forwarding an
 | 17 | The first call after a long voyage waits **about 10% less**; a ship coming from a port less than a day away waits **about 17% more** | [fig17](#17-time-at-sea-before-arrival) |
 | 18 | Waits jump once berth occupancy passes **90%**, but a busy quay is not the whole story: **Itapoá** runs at 87% with short waits, **Portonave** at 37% with long ones | [fig18](#18-berth-occupancy-and-waiting) |
 
+## Reading guide: doctoral research proposal
+
+This repository is the preliminary evidence for a doctoral research proposal on carrier–terminal alignment and vessel waiting time at Brazilian container terminals. The notebooks that matter for that question, in order:
+
+- **07 — wait drivers**: same-terminal, same-month carrier gap with weekly block-bootstrap intervals (Maersk −28%, MSC +39%).
+- **10 — arrival regularity**: usual weekly arrival slot per vessel–terminal (circular mean, leave-one-out); ships on their slot wait about 21% less.
+- **14 — rotation position**: time since the previous Brazilian port as a source of variation in arrival timing (short hops +17%, long voyages −10%).
+- **15 — berth occupancy**: ANTAQ daily occupancy validated against call records; waits jump above 90% occupancy.
+- **12 — carrier concentration**: the Santos Brasil switch after the CMA CGM takeover, concentrated in April–May 2025, not February.
+
+Everything here is descriptive. The proposal's identification strategy (terminal-by-month fixed effects, punctuality as an outcome, congestion interaction, event analysis) is not implemented yet.
+
 ---
 
 ## Data
