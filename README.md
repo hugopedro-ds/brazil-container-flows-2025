@@ -260,7 +260,7 @@ Models trained on 2024 only, tested on every 2025 call.
 
 - **Vessel class, month and carrier alone do not beat the terminal median.** The queue on arrival does, in a year the model never saw. Once the queue is known, the operator adds about 0.5 h; month and class add nothing, because the queue already reflects the season.
 - **Arrival punctuality**, used instead of contractual berth windows (not public): ships arriving within 6 h of their usual weekly slot wait about **21% less** than others at the same terminal and month; ships more than a day early wait about 25% more, mostly for their own window. Late arrivals do not wait longer than average.
-- **Punctuality explains about half of the MSC–Maersk gap.** Maersk vessels arrive on their slot 30% of the time, MSC vessels 15%.
+- **Arrival timing coincides with about half of the MSC–Maersk gap; the mechanism is not identified.** Maersk vessels arrive on their slot 30% of the time, MSC vessels 15%. Comparing ships equally far from their usual slot narrows the gap from about 51 to 28 percentage points. Punctuality is itself shaped by the carrier–terminal relationship (a terminal that holds a window makes its carrier look punctual), so this is a bound on how much of the gap coincides with arrival timing, not a decomposition into mechanisms.
 
 **Caveat:** the usual slot is inferred, and arrival time partly reflects berth planning (ships slow down when the berth is not ready), so punctuality and waiting influence each other.
 
@@ -404,5 +404,13 @@ ANTAQ revises its data, so an export made later may differ slightly from the fig
 
 ## Author
 
-**Hugo Pedro** — São Paulo, Brazil. 17+ years in international freight forwarding and ocean freight procurement; now working on trade-lane analytics.
+**Hugo Pedro** — São Paulo, Brazil. 17+ years in international freight forwarding and ocean freight procurement; now an independent supply-chain consultant working on port and trade-lane analytics with public data.
 [LinkedIn](https://www.linkedin.com/in/hugopedro/)
+
+## How to cite
+
+Pedro, H. D. (2026). *Brazil container flows 2025: carrier alignment, waiting times and berth occupancy at Brazilian container terminals* (v1.0). GitHub. https://github.com/hugopedro-ds/brazil-container-flows-2025
+
+## License
+
+MIT — see `LICENSE`.
